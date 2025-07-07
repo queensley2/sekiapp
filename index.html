@@ -17,8 +17,10 @@
   <body>
     <!-- Header -->
     <header class="topbar">
-<img src="/assets/4 1.png" alt="logo">      <div class="user-box">
-<img src="/assets/Ellipse 1.png" alt="">        <div class="user-info">
+      <img src="/assets/4 1.png" alt="logo" />
+      <div class="user-box">
+        <img src="/assets/Ellipse 1.png" alt="" />
+        <div class="user-info">
           <div class="user-name">Sam Aiyesoro</div>
           <div class="user-role">Admin</div>
         </div>
@@ -38,8 +40,12 @@
         </div>
         <div class="tab-content crypto-tab active">
           <div class="actions">
-            <button class="btn refresh"><i class="fa-solid fa-rotate-right"></i> Refresh Balances</button>
-            <a href="add-crypto.html" class="btn-add"> <i class="fa-solid fa-plus"></i>Add Crypto</a>
+            <button class="btn refresh">
+              <i class="fa-solid fa-rotate-right"></i> Refresh Balances
+            </button>
+            <a href="add-crypto.html" class="btn-add">
+              <i class="fa-solid fa-plus"></i>Add Crypto</a
+            >
           </div>
 
           <!-- Table Header -->
@@ -52,181 +58,337 @@
                 <th>Deposit</th>
                 <th>Withdraw</th>
                 <th>Fee</th>
-                <th>Actions</th>
+                <th></th>
               </tr>
             </thead>
-            <tbody class="crypto-table-body">
-              <!-- Bitcoin Group -->
-               <tr class="group-label-row" style="background: #f5f5f5">
+            <tbody>
+              <tr>
                 <td colspan="7">
-                  <span class="group-label bitcoin"
-                    >     
-                     <img src="/assets/bitcoin.png" alt="Bitcoin" class="crypto-icon" />
-                        Bitcoin
-                  </span >
-                  <i
-                    class="fa-solid fa-chevron-up chevron-toggle"
-                    style="cursor: pointer"></i>
-                  
-                </td>
-                
-                </tr>
-               <tr class="crypto-row bitcoin-row" style="display: none">
-                <td>
-                  <img
-                    src="/assets/bitcoin.png"
-                    alt="Bitcoin"
-                    class="crypto-icon"
-                  />
-                  Bitcoin
-                </td>
-                <td>BTC</td>
-                <td>44323.4566 BTC</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
-                </tr>
-             
-              
-              <!-- Ethereum Group -->
-              <tr class="group-label-row" style="background: #f5f5f5">
-                <td colspan="6">
-                  <span class="group-label ethereum"
-                    >      <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
-Ethereum</span
-                  >
-                </td>
-                <td style="text-align: right">
-                  <i
-                    class="fa-solid fa-chevron-up chevron-toggle"
-                    style="cursor: pointer"
-                  ></i>
-                </td>
-              </tr>
-              <tr class="crypto-row ethereum-row" style="display: none">
-                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
-Ethereum</td>
-                <td>ERC-20</td>
-                <td>83214.4566 ETH</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
-              </tr>
-              <tr class="crypto-row ethereum-row" style="display: none">
-                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
-Ethereum</td>
-                <td>BEP-20</td>
-                <td>83214.4566 ETH</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
-              </tr>
+                  <div class="group-wrapper">
+                    <div class="group-label-row" onclick="toggleRow(this)">
+                      <div class="label-left">
+                        <img
+                          src="/assets/bitcoin.png"
+                          alt="btc"
+                          class="crypto-icon"
+                        />
+                        <span class="group-label-text">Bitcoin</span>
+                      </div>
+                      <i class="fa fa-chevron-down chevron-toggle"></i>
+                    </div>
 
-              <!-- USDT Group -->
-              <tr class="group-label-row" style="background: #f5f5f5">
-                <td colspan="6">
-                  <span class="group-label ethereum"
-                    >      <img src="/assets/usdt.png" alt="USDT" class="crypto-icon" />
-USDT</span
-                  >
-                </td>
-                <td style="text-align: right">
-                  <i
-                    class="fa-solid fa-chevron-up chevron-toggle"
-                    style="cursor: pointer"
-                  ></i>
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/bitcoin.png"
+                          alt="btc"
+                          class="crypto-icon"
+                        />
+                        Bitcoin
+                      </td>
+                      <td>BTC</td>
+                      <td>44324.4566 BTC</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                  </div>
                 </td>
               </tr>
-              <tr class="crypto-row ethereum-row" style="display: none">
-                <td>    <img src="/assets/usdt.png" alt="Tether" class="crypto-icon" />
-Tether</td>
-                <td>ERC-20</td>
-                <td>387223.546 USDT</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
+              <tr>
+                <td colspan="7">
+                  <div class="group-wrapper">
+                    <div class="group-label-row" onclick="toggleRow(this)">
+                      <div class="label-left">
+                        <img
+                          src="/assets/eth.png"
+                          alt="eth"
+                          class="crypto-icon"
+                        />
+                        <span class="group-label-text">Ethereum</span>
+                      </div>
+                      <i class="fa fa-chevron-down chevron-toggle"></i>
+                    </div>
+
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/eth.png"
+                          alt="eth"
+                          class="crypto-icon"
+                        />
+                        Ethereum
+                      </td>
+                      <td>ERC-20</td>
+                      <td>83214.4556 ETH</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/eth.png"
+                          alt="eth"
+                          class="crypto-icon"
+                        />
+                        Ethereum
+                      </td>
+                      <td>BEP-20</td>
+                      <td>83214.4556 ETH</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/eth.png"
+                          alt="btc"
+                          class="crypto-icon"
+                        />
+                        Ethereum
+                      </td>
+                      <td>SOL</td>
+                      <td>83214.4556 ETH</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                  </div>
                 </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
               </tr>
-              <tr class="crypto-row ethereum-row" style="display: none">
-                <td><img src="/assets/usdt.png" alt="Tether" class="crypto-icon" /></i>Tether</td>
-                <td>TRC-20</td>
-                <td>387223.546 USDT</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
+              <tr>
+                <td colspan="7">
+                  <div class="group-wrapper">
+                    <div class="group-label-row" onclick="toggleRow(this)">
+                      <div class="label-left">
+                        <img
+                          src="/assets/usdt.png"
+                          alt="usdt"
+                          class="crypto-icon"
+                        />
+                        <span class="group-label-text">USDT</span>
+                      </div>
+                      <i class="fa fa-chevron-down chevron-toggle"></i>
+                    </div>
+
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/usdt.png"
+                          alt="usdt"
+                          class="crypto-icon"
+                        />
+                        Tether
+                      </td>
+                      <td>ERC-20</td>
+                      <td>387223.546 USDT</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/usdt.png"
+                          alt="usdt"
+                          class="crypto-icon"
+                        />
+                        Tether
+                      </td>
+                      <td>TRC-20</td>
+                      <td>387223.546 USDT</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/usdt.png"
+                          alt="usdt"
+                          class="crypto-icon"
+                        />
+                        Tether
+                      </td>
+                      <td>BEP-20</td>
+                      <td>387223.546 USDT</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                  </div>
                 </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
               </tr>
-              <tr class="crypto-row ethereum-row" style="display: none">
-                <td><img src="/assets/usdt.png" alt="Tether" class="crypto-icon" /></i>Tether</td>
-                <td>BEP-20</td>
-                <td>387223.546 USDT</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
+              <tr>
+                <td colspan="7">
+                  <div class="group-wrapper">
+                    <div class="group-label-row" onclick="toggleRow(this)">
+                      <div class="label-left">
+                        <img
+                          src="/assets/polygon.png"
+                          alt="polygon"
+                          class="crypto-icon"
+                        />
+                        <span class="group-label-text">Polygon</span>
+                      </div>
+                      <i class="fa fa-chevron-down chevron-toggle"></i>
+                    </div>
+
+                    <tr
+                      class="crypto-details-row inner-table"
+                      style="display: none"
+                    >
+                      <td class="label-left">
+                        <img
+                          src="/assets/polygon.png"
+                          alt="polygon"
+                          class="crypto-icon"
+                        />
+                        Polygon
+                      </td>
+                      <td>BTC</td>
+                      <td>44324.4566 BTC</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider"></span>
+                        </label>
+                      </td>
+                      <td>$2</td>
+                      <td>
+                        <i class="fa fa-pencil green-icon"></i>
+                        <i class="fa fa-trash red-icon"></i>
+                      </td>
+                    </tr>
+                  </div>
                 </td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider"></span>
-                  </label>
-                </td>
-                <td>$2</td>
-                <td>✏️ 🗑️</td>
               </tr>
             </tbody>
           </table>
@@ -295,8 +457,14 @@ Tether</td>
             </thead>
             <tbody>
               <tr>
-                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
- Ethereum</td>
+                <td>
+                  <img
+                    src="/assets/eth.png"
+                    alt="Ethereum"
+                    class="crypto-icon"
+                  />
+                  Ethereum
+                </td>
                 <td>ERC-20</td>
                 <td>0xy45gFvsgAopNv</td>
                 <td>0.006 ETH</td>
@@ -322,8 +490,14 @@ Tether</td>
                 </td>
               </tr>
               <tr>
-                <td>    <img src="/assets/usdt.png" alt="Tether" class="crypto-icon" />
- Tether</td>
+                <td>
+                  <img
+                    src="/assets/usdt.png"
+                    alt="Tether"
+                    class="crypto-icon"
+                  />
+                  Tether
+                </td>
                 <td>ERC-20</td>
                 <td>0xy45gFvsgAopNv</td>
                 <td>10 USDT</td>
@@ -349,8 +523,14 @@ Tether</td>
                 </td>
               </tr>
               <tr>
-                <td>    <img src="/assets/polygon.png" alt="Polygon" class="crypto-icon" />
- Polygon</td>
+                <td>
+                  <img
+                    src="/assets/polygon.png"
+                    alt="Polygon"
+                    class="crypto-icon"
+                  />
+                  Polygon
+                </td>
                 <td>ERC-20</td>
                 <td>0xy45gFvsgAopNv</td>
                 <td>56 MATIC</td>
@@ -376,8 +556,14 @@ Tether</td>
                 </td>
               </tr>
               <tr>
-                <td>    <img src="/assets/shiba.png" alt="Shiba Inu" class="crypto-icon" />
- Shiba Inu</td>
+                <td>
+                  <img
+                    src="/assets/shiba.png"
+                    alt="Shiba Inu"
+                    class="crypto-icon"
+                  />
+                  Shiba Inu
+                </td>
                 <td>ERC-20</td>
                 <td>0xy45gFvsgAopNv</td>
                 <td>56 SHIB</td>
@@ -402,7 +588,6 @@ Tether</td>
                   <i class="fas fa-trash"></i>
                 </td>
               </tr>
-              <!-- Add more rows as needed -->
             </tbody>
           </table>
         </div>
@@ -485,25 +670,34 @@ Tether</td>
         });
     </script>
     <script>
-      document
-        .querySelectorAll(".chevron-toggle")
-        .forEach(function (icon, idx) {
-          icon.addEventListener("click", function () {
-            // Find all rows for this group
-            const groupRow = icon.closest("tr");
-            let nextRow = groupRow.nextElementSibling;
-            // Toggle icon direction
-            const isOpen = icon.classList.toggle("open");
-            icon.classList.toggle("fa-chevron-up", !isOpen);
-            icon.classList.toggle("fa-chevron-down", isOpen);
-            // Show/hide rows until next group-label-row or end
-            while (nextRow && !nextRow.classList.contains("group-label-row")) {
-              nextRow.style.display = isOpen ? "table-row" : "none";
-              nextRow = nextRow.nextElementSibling;
+      document.querySelectorAll(".chevron-toggle").forEach(function (icon) {
+        icon.addEventListener("click", function (e) {
+          e.stopPropagation(); // Prevent bubbling
+
+          const labelRow = this.closest("tr"); // The .group-label-row
+          let nextRow = labelRow.nextElementSibling;
+
+          // Determine whether we should show or hide the details
+          let shouldOpen = true;
+          if (nextRow && nextRow.classList.contains("crypto-details-row")) {
+            shouldOpen = nextRow.style.display === "none";
+          }
+
+          // Loop and toggle all following .crypto-details-row until next .group-label-row
+          while (nextRow && !nextRow.classList.contains("group-label-row")) {
+            if (nextRow.classList.contains("crypto-details-row")) {
+              nextRow.style.display = shouldOpen ? "table-row" : "none";
             }
-          });
+            nextRow = nextRow.nextElementSibling;
+          }
+
+          // Toggle the icon direction
+          this.classList.toggle("fa-chevron-down", !shouldOpen);
+          this.classList.toggle("fa-chevron-up", shouldOpen);
         });
+      });
     </script>
+
     <script>
       // Tab switching logic
       document.querySelectorAll(".tab").forEach((tab) => {

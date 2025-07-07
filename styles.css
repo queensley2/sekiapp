@@ -6,7 +6,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  /* background: #f5f5f5; */
   color: #333;
 }
 
@@ -111,6 +110,9 @@ h2 {
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
+  background: #fff;
+  display: flex;
+  align-items: center;
 }
 .btn i {
   margin-right: 6px;
@@ -137,127 +139,128 @@ h2 {
   font-size: 16px;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.crypto-group {
-  margin-bottom: 1rem;
-}
-
-.group-label {
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  background: #f9f9f9;
-  margin-bottom: 0.3rem;
-  border-radius: 6px;
-}
-.group-label-row {
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 8px 0;
-}
-.group-label-row td {
-  vertical-align: middle;
-  font-weight: 600;
-  font-size: 1.1em;
-  border: #1a1a1a 1px solid;
-}
-.chevron-toggle {
-  margin-left: 16px;
-  transition: transform 0.2s;
-  float: right;
-  cursor: pointer;
-}
-
-.group-label.bitcoin {
-  color: #448c04;
-  font-size: 20px;
-}
-.group-label.ethereum {
-  color: #448c04;
-  font-size: 20px;
-}
-.group-label.ethereum i.fa-brands.fa-ethereum {
-  /* color: #0000000d; */
-  color: black;
-  font-size: 1.5em;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-.table-row {
-  background: #fff;
-  /* border-bottom: 1px solid #eee; */
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
 .crypto-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 12px;
-  margin-top: 16px;
-  background: #fff;
-  /* border-radius: 10px; */
-  overflow: hidden;
+  border-collapse: collapse;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
 
 .crypto-table th {
-  padding: 10px 8px;
   text-align: left;
-  background-color: #f2f2f2;
-  font-size: 16px;
-  font-weight: 400;
-  color: #737373;
+  background: #f5f5f5;
+  padding: 12px;
+  color: #888;
+  font-weight: 500;
 }
-.crypto-table tr {
-  gap: 8px;
-  display: table-row;
-  font-size: 16px;
-  color: #1a1a1a;
-  font-weight: 400;
-}
-.crypto-table td {
-  padding: 10px 8px;
-  text-align: left;
-  /* border-bottom: #1a1a1a 1px solid; */
-}
-.crypto-row td {
-  padding-left: 32px;
-}
-.crypto-row .ethereum-row {
-  font-weight: 400;
-  font-size: 16px;
-  color: #1a1a1a;
-}
-.crypto-row .bitcoin-row {
-  font-weight: 400;
-  font-size: 16px;
-  color: #1a1a1a;
-}
+
 .group-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
   cursor: pointer;
-  user-select: none;
 }
-.chevron-toggle.fa-chevron-down {
-  transform: rotate(0deg);
+
+.label-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3f9e0e;
 }
-.chevron-toggle.fa-chevron-up {
+
+.group-label-row:hover {
+  background: #f9f9f9;
+}
+
+.crypto-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.chevron-toggle {
+  transition: transform 0.3s;
+  color: #888;
+}
+
+.group-label-row.open .chevron-toggle {
   transform: rotate(180deg);
+}
+
+.crypto-details-row.visible {
+  display: block;
+  border: #1a1a1a 1px solid;
+}
+
+.green-icon {
+  color: #3f9e0e;
+  cursor: pointer;
+}
+
+.red-icon {
+  color: #e53935;
+  cursor: pointer;
+}
+.crypto-table,
+.crypto-table td,
+.inner-table,
+.inner-table td {
+  border-collapse: collapse;
+  padding: 12px 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.crypto-table th {
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.inner-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.inner-table td {
+  border-top: 1px solid #eee;
+  padding: 12px 20px;
+  vertical-align: middle;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+.group-wrapper {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 10px;
+  background: #fff;
+}
+
+.crypto-details-row {
+  display: none;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.group-label-row.open + .crypto-details-row {
+  display: block;
 }
 .switch {
   position: relative;
   display: inline-block;
-  width: 34px;
-  height: 18px;
+  width: 40px;
+  height: 20px;
 }
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -267,24 +270,27 @@ h2 {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
-  border-radius: 18px;
+  border-radius: 20px;
 }
+
 .slider:before {
   position: absolute;
   content: "";
-  height: 14px;
-  width: 14px;
+  height: 16px;
+  width: 16px;
   left: 2px;
   bottom: 2px;
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
 }
-.switch input:checked + .slider {
-  background-color: #3f9e0e;
+
+input:checked + .slider {
+  background-color: #4caf50;
 }
-.switch input:checked + .slider:before {
-  transform: translateX(16px);
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
 /* policy  */
@@ -311,8 +317,9 @@ h2 {
 }
 
 .btn.orange {
-  background: #f90;
+  background: #f56f43;
   color: white;
+  font-size: 16px;
 }
 
 .table-header,
@@ -350,12 +357,71 @@ i {
   margin-right: 8px;
   cursor: pointer;
 }
-/* body {
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  background: #f4f4f4;
-  color: #333;
-} */
+@media screen and (max-width: 1024px) {
+  .crypto-table th,
+  .crypto-table td {
+    font-size: 0.85rem;
+  }
+
+  .tab {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topbar {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .tabs {
+    gap: 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .crypto-table thead {
+    display: none;
+  }
+
+  .crypto-table,
+  .crypto-table tbody,
+  .crypto-table tr,
+  .crypto-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .crypto-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+  }
+
+  .crypto-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .crypto-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    font-weight: bold;
+    text-align: left;
+  }
+}
 
 /* add-crypto page */
 .topbar {
@@ -431,28 +497,6 @@ select {
   cursor: pointer;
   color: #555;
 }
-
-/* .btn {
-  padding: 10px 16px;
-  background: #ccc;
-  border: none;
-  width: 321px;
-  height: 56px;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  font-size: 16px;
-}
-
-.btn.green {
-  background: #448c04;
-  color: white;
-}
-
-.btn.light {
-  background: #e0e0e0;
-} */
 
 .user-box {
   display: flex;
@@ -717,7 +761,6 @@ select {
 .modal-content p {
   text-align: center;
 }
-/* Position the close (X) icon at the top right of the modal */
 .close-modal,
 .close-auth-modal {
   position: absolute;
@@ -754,7 +797,6 @@ select {
 .auth-code-input:focus {
   border-color: #3f9e0e;
 }
-/* Modal Overlay and Content (reuse if already present) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -832,16 +874,14 @@ select {
 
 /* create policy page style */
 .policy-main {
-  padding: 2rem 1rem;
-  /* max-width: 1100px; */
+  padding: 5rem 3rem;
   margin: 0 auto;
 }
 .policy-card {
   background: #fff;
   border-radius: 10px;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06); */
-  /* border: 1.5px dashed #2196f3; */
+  padding: 2rem 3rem 2rem 3rem;
+
   margin-top: 2rem;
 }
 .policy-title {
@@ -1012,9 +1052,11 @@ select {
 .copy-icon:hover {
   color: #3f9e0e;
 }
+
 @media (max-width: 900px) {
   .sweep-history-table-wrap {
     padding: 1rem 0.2rem;
+    font-size: 12px;
   }
   .search-box {
     width: 100%;
@@ -1024,6 +1066,7 @@ select {
     flex-direction: column;
     align-items: stretch;
     gap: 0.7rem;
+    font-size: 8px;
   }
 }
 /* Addresses Page Styles */
