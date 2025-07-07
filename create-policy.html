@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Policy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <img src="/assets/4 1.png" alt="" />
+      <div class="user-box">
+        <img src="/assets/Ellipse 1.png" alt="" />
+        <div class="user-info">
+          <div class="user-name">Sam Aiyesoro</div>
+          <div class="user-role">Admin</div>
+        </div>
+      </div>
+    </header>
+    <main class="policy-main">
+      <div class="policy-card">
+        <div class="policy-title">
+          <a
+            href="index.html"
+            class="back-link"
+            style="text-decoration: none; color: inherit; margin-right: 10px"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          Create New Policy
+        </div>
+        <form class="policy-form-grid">
+          <label>
+            Crypto
+            <select>
+              <option>Select crypto</option>
+              <option>Ethereum</option>
+              <option>Tether</option>
+              <option>Polygon</option>
+              <option>Shiba Inu</option>
+            </select>
+          </label>
+          <label>
+            Fee
+            <div class="input-usd">
+              <input type="text" placeholder="0" />
+              <span class="usd-text">USD</span>
+            </div>
+          </label>
+          <label>
+            Network
+            <select>
+              <option>Select network</option>
+              <option>ERC-20</option>
+              <option>BEP-20</option>
+              <option>TRC-20</option>
+            </select>
+          </label>
+          <label>
+            Address
+            <input type="text" placeholder="Enter address" />
+          </label>
+          <label>
+            Wallet ID
+            <input type="text" placeholder="Enter ID" />
+          </label>
+          <label>
+            Status
+            <select>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+          </label>
+          <label>
+            Min. Value
+            <div class="input-usdt">
+              <input type="text" placeholder="0" />
+              <span class="usdt-text">USDT</span>
+            </div>
+          </label>
+          <label>
+            Time for sweep
+            <div style="display: flex; gap: 0.5rem">
+              <select>
+                <option>Daily</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+              </select>
+              <input type="time" value="06:00" style="width: 110px" />
+            </div>
+          </label>
+          <div class="policy-form-actions">
+            <button class="btn green" type="submit">Create Policy</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Crypto</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Fixed Navbar -->
+    <header class="topbar">
+      <img src="/assets/4 1.png" alt="" />
+      <div class="user-box">
+        <img src="/assets/Ellipse 1.png" alt="" />
+        <div class="user-info">
+          <div class="user-name">Sam Aiyesoro</div>
+          <div class="user-role">Admin</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main add-crypto-form">
+      <h2>
+        <a
+          href="index.html"
+          class="back-link"
+          style="text-decoration: none; color: inherit"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        Add Crypto
+      </h2>
+      <form class="form-grid">
+        <div class="form-left">
+          <label>Coin name<input type="text" placeholder="Enter name" /></label>
+          <label>Symbol<input type="text" placeholder="Enter symbol" /></label>
+          <div class="network-section">
+            <label class="section-label">Network</label>
+            <div class="network-toggle">
+              <div class="radio-pill">
+                <input
+                  type="radio"
+                  name="network-type"
+                  id="sub-network-radio"
+                  checked
+                />
+                <span>Sub Network</span>
+              </div>
+              <div class="radio-pill">
+                <input type="radio" name="network-type" id="main-asset-radio" />
+                <span>Main asset</span>
+              </div>
+            </div>
+
+            <div class="network-dropdown-box">
+              <label class="dropdown-label">All Networks</label>
+              <select>
+                <option>Select Network</option>
+                <option>ERC-20</option>
+                <option>BEP-20</option>
+                <option>TRC-20</option>
+              </select>
+            </div>
+            <div class="main-asset-fields" style="display: none">
+              <label
+                >Symbol <input type="text" placeholder="Enter symbol"
+              /></label>
+              <label
+                >Address <input type="text" placeholder="Enter address"
+              /></label>
+            </div>
+          </div>
+
+          <label>ID (Coinmarketcap price)<input type="text" /></label>
+          <label>Wallet Identifier<input type="text" /></label>
+          <label>Minimum Deposit<input type="text" /></label>
+          <div class="select-row">
+            <label>
+              Status
+              <select>
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </label>
+
+            <label>
+              Show To Users?
+              <select>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="btn green">Add Crypto</button>
+        </div>
+
+        <div class="form-right">
+          <div class="coin-settings-card">
+            <div class="coin-settings-row">
+              <div class="coin-setting">
+                <span>Accept Withdrawal</span>
+                <label class="switch">
+                  <input type="checkbox" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="coin-setting">
+                <span>Accept Deposit</span>
+                <label class="switch">
+                  <input type="checkbox" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+            <button class="settings-btn">
+              <i class="fa-solid fa-gear"></i> Withdrawal settings
+            </button>
+          </div>
+
+          <div class="upload-section">
+            <p>Logo</p>
+            <div class="upload-box">Click to upload or drag and drop</div>
+          </div>
+
+          <div class="features-section">
+            <p>Features</p>
+            <div class="features-card">
+              <div class="features-row">
+                <div class="feature-item">
+                  <span>Deposit</span>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="feature-item">
+                  <span>Withdraw</span>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="features-row">
+                <div class="feature-item">
+                  <span>Buy Crypto</span>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="feature-item">
+                  <span>Sell Crypto</span>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+              <!-- <div class="features-row"> -->
+              <div class="feature-item">
+                <span>Swap From</span>
+                <label class="switch">
+                  <input type="checkbox" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="feature-item">
+                <span>Swap To - From Fiat</span>
+                <label class="switch">
+                  <input type="checkbox" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <!-- </div> -->
+              <div class="features-row">
+                <div class="feature-item">
+                  <span>Swap To - From Crypto</span>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <div id="withdrawal-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <span class="close-modal" title="Close">&times;</span>
+        <div class="modal-title">
+          <h3>Withdrawal settings</h3>
+          <p>Enter the details for withdrawal</p>
+        </div>
+
+        <label
+          >ID
+          <div class="input-usd">
+            <input type="text" placeholder="Enter ID" />
+          </div>
+        </label>
+        <label
+          >Fee
+          <div class="input-usd">
+            <input type="text" placeholder="Enter fee" />
+            <span class="usd-text">USD</span>
+          </div>
+        </label>
+        <button class="btn green" style="width: 100%">Confirm</button>
+      </div>
+    </div>
+    <div id="google-auth-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <span class="close-auth-modal" title="Close">&times;</span>
+        <div class="modal-title">
+          <h3>Google Auth Code</h3>
+          <p>
+            Enter google auth code generated in your google authenticator app to
+            proceed
+          </p>
+        </div>
+        <p>Enter Google auth</p>
+
+        <div class="google-auth-inputs">
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+        </div>
+        <button class="btn green" style="width: 100%">Confirm</button>
+      </div>
+    </div>
+    <script>
+      const subNetworkRadio = document.getElementById("sub-network-radio");
+      const mainAssetRadio = document.getElementById("main-asset-radio");
+      const networkDropdownBox = document.querySelector(
+        ".network-dropdown-box"
+      );
+      const mainAssetFields = document.querySelector(".main-asset-fields");
+
+      function toggleNetworkFields() {
+        if (subNetworkRadio.checked) {
+          networkDropdownBox.style.display = "block";
+          mainAssetFields.style.display = "none";
+        } else {
+          networkDropdownBox.style.display = "none";
+          mainAssetFields.style.display = "block";
+        }
+      }
+
+      subNetworkRadio.addEventListener("change", toggleNetworkFields);
+      mainAssetRadio.addEventListener("change", toggleNetworkFields);
+
+      // Initialize on page load
+      toggleNetworkFields();
+    </script>
+    <script>
+      // ...existing script...
+
+      // Modal logic
+      const modal = document.getElementById("withdrawal-modal");
+      const openModalBtn = document.querySelector(".settings-btn");
+      const closeModalBtn = document.querySelector(".close-modal");
+
+      openModalBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "flex";
+      });
+
+      closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      // Optional: close modal when clicking outside the modal content
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+    <script>
+      // ...existing modal logic...
+
+      // Google Auth Modal logic
+      const googleAuthModal = document.getElementById("google-auth-modal");
+      const openAuthBtn = document.querySelector(
+        "#withdrawal-modal .btn.green"
+      );
+      const closeAuthBtn = document.querySelector(".close-auth-modal");
+
+      openAuthBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("withdrawal-modal").style.display = "none";
+        googleAuthModal.style.display = "flex";
+        // Focus the first input
+        googleAuthModal.querySelector(".auth-code-input").focus();
+      });
+
+      closeAuthBtn.addEventListener("click", function () {
+        googleAuthModal.style.display = "none";
+      });
+
+      googleAuthModal.addEventListener("click", function (e) {
+        if (e.target === googleAuthModal) {
+          googleAuthModal.style.display = "none";
+        }
+      });
+
+      // Auto-focus next input on entry
+      document
+        .querySelectorAll(".auth-code-input")
+        .forEach((input, idx, arr) => {
+          input.addEventListener("input", function () {
+            if (this.value.length === 1 && idx < arr.length - 1) {
+              arr[idx + 1].focus();
+            }
+          });
+          input.addEventListener("keydown", function (e) {
+            if (e.key === "Backspace" && !this.value && idx > 0) {
+              arr[idx - 1].focus();
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweep History</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <img src="/assets/4 1.png" alt="" />
+      <div class="user-box">
+        <img src="/assets/Ellipse 1.png" alt="" />
+        <div class="user-info">
+          <div class="user-name">Sam Aiyesoro</div>
+          <div class="user-role">Admin</div>
+        </div>
+      </div>
+    </header>
+    <main class="main sweep-history-main">
+      <div class="sweep-history-header">
+        <a
+          href="index.html"
+          class="back-link"
+          style="text-decoration: none; color: inherit; margin-right: 10px"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <span class="sweep-title">Sweep History</span>
+      </div>
+      <div class="sweep-history-controls">
+        <div class="search-box">
+          <input type="text" placeholder="Search crypto" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="filter-actions">
+          <select>
+            <option>This month</option>
+            <option>Last month</option>
+            <option>This year</option>
+          </select>
+          <button class="btn green">Download CSV</button>
+        </div>
+      </div>
+      <div class="sweep-history-table-wrap">
+        <table class="sweep-history-table">
+          <thead>
+            <tr>
+              <th>Crypto</th>
+              <th>Network</th>
+              <th>Wallet ID</th>
+              <th>Amount</th>
+              <th>Fee</th>
+              <th>Address</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="eth.png" alt="Ethereum" class="crypto-icon" />
+                Ethereum
+              </td>
+              <td>ERC-20</td>
+              <td>0yd54yf5seg43yv</td>
+              <td>23.44315 ETH</td>
+              <td>$2</td>
+              <td>
+                0x234regh7yte54wgihioy
+                <i
+                  class="fa-regular fa-copy copy-icon"
+                  title="Copy"
+                  style="cursor: pointer; margin-left: 6px"
+                ></i>
+              </td>
+              <td>00:00 AM, 21 Jun 2025</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="usdt.png" alt="Tether" class="crypto-icon" /> Tether
+              </td>
+              <td>ERC-20</td>
+              <td>0yd54yf5seg43yv</td>
+              <td>23.44315 USDT</td>
+              <td>$2</td>
+              <td>
+                0x234regh7yte54wgihioy
+                <i
+                  class="fa-regular fa-copy copy-icon"
+                  title="Copy"
+                  style="cursor: pointer; margin-left: 6px"
+                ></i>
+              </td>
+              <td>00:00 AM, 21 Jun 2025</td>
+            </tr>
+            <!-- Repeat rows for other cryptos as needed -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      // Copy address functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".copy-icon").forEach((icon) => {
+          icon.addEventListener("click", function () {
+            const address = this.parentElement.textContent.trim();
+            navigator.clipboard.writeText(address);
+            this.title = "Copied!";
+            setTimeout(() => {
+              this.title = "Copy";
+            }, 1200);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

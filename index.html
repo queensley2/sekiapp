@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="topbar">
+<img src="/assets/4 1.png" alt="logo">      <div class="user-box">
+<img src="/assets/Ellipse 1.png" alt="">        <div class="user-info">
+          <div class="user-name">Sam Aiyesoro</div>
+          <div class="user-role">Admin</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main">
+      <div class="settings-card">
+        <h2>Settings</h2>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" data-tab="crypto">Crypto Asset</button>
+          <button class="tab" data-tab="fiat">Fiat Asset</button>
+          <button class="tab" data-tab="policy">Collection Policy</button>
+        </div>
+        <div class="tab-content crypto-tab active">
+          <div class="actions">
+            <button class="btn refresh"><i class="fa-solid fa-rotate-right"></i> Refresh Balances</button>
+            <a href="add-crypto.html" class="btn-add"> <i class="fa-solid fa-plus"></i>Add Crypto</a>
+          </div>
+
+          <!-- Table Header -->
+          <table class="crypto-table">
+            <thead>
+              <tr>
+                <th>Crypto</th>
+                <th>Network</th>
+                <th>Balance</th>
+                <th>Deposit</th>
+                <th>Withdraw</th>
+                <th>Fee</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody class="crypto-table-body">
+              <!-- Bitcoin Group -->
+               <tr class="group-label-row" style="background: #f5f5f5">
+                <td colspan="7">
+                  <span class="group-label bitcoin"
+                    >     
+                     <img src="/assets/bitcoin.png" alt="Bitcoin" class="crypto-icon" />
+                        Bitcoin
+                  </span >
+                  <i
+                    class="fa-solid fa-chevron-up chevron-toggle"
+                    style="cursor: pointer"></i>
+                  
+                </td>
+                
+                </tr>
+               <tr class="crypto-row bitcoin-row" style="display: none">
+                <td>
+                  <img
+                    src="/assets/bitcoin.png"
+                    alt="Bitcoin"
+                    class="crypto-icon"
+                  />
+                  Bitcoin
+                </td>
+                <td>BTC</td>
+                <td>44323.4566 BTC</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+                </tr>
+             
+              
+              <!-- Ethereum Group -->
+              <tr class="group-label-row" style="background: #f5f5f5">
+                <td colspan="6">
+                  <span class="group-label ethereum"
+                    >      <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
+Ethereum</span
+                  >
+                </td>
+                <td style="text-align: right">
+                  <i
+                    class="fa-solid fa-chevron-up chevron-toggle"
+                    style="cursor: pointer"
+                  ></i>
+                </td>
+              </tr>
+              <tr class="crypto-row ethereum-row" style="display: none">
+                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
+Ethereum</td>
+                <td>ERC-20</td>
+                <td>83214.4566 ETH</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+              <tr class="crypto-row ethereum-row" style="display: none">
+                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
+Ethereum</td>
+                <td>BEP-20</td>
+                <td>83214.4566 ETH</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+
+              <!-- USDT Group -->
+              <tr class="group-label-row" style="background: #f5f5f5">
+                <td colspan="6">
+                  <span class="group-label ethereum"
+                    >      <img src="/assets/usdt.png" alt="USDT" class="crypto-icon" />
+USDT</span
+                  >
+                </td>
+                <td style="text-align: right">
+                  <i
+                    class="fa-solid fa-chevron-up chevron-toggle"
+                    style="cursor: pointer"
+                  ></i>
+                </td>
+              </tr>
+              <tr class="crypto-row ethereum-row" style="display: none">
+                <td>    <img src="/assets/usdt.png" alt="Tether" class="crypto-icon" />
+Tether</td>
+                <td>ERC-20</td>
+                <td>387223.546 USDT</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+              <tr class="crypto-row ethereum-row" style="display: none">
+                <td><img src="/assets/usdt.png" alt="Tether" class="crypto-icon" /></i>Tether</td>
+                <td>TRC-20</td>
+                <td>387223.546 USDT</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+              <tr class="crypto-row ethereum-row" style="display: none">
+                <td><img src="/assets/usdt.png" alt="Tether" class="crypto-icon" /></i>Tether</td>
+                <td>BEP-20</td>
+                <td>387223.546 USDT</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$2</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content fiat-tab">
+          <table class="crypto-table">
+            <thead>
+              <tr>
+                <th>Fiat</th>
+                <th>Currency</th>
+                <th>Balance</th>
+                <th>Deposit</th>
+                <th>Withdraw</th>
+                <th>Fee</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>US Dollar</td>
+                <td>USD</td>
+                <td>12,000.00 USD</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>$1</td>
+                <td>✏️ 🗑️</td>
+              </tr>
+              <!-- Add more fiat rows as needed -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content policy-tab">
+          <div class="actions">
+            <a href="sweep-history.html" class="btn">Sweep History</a>
+            <a href="address.html" class="btn">Addresses</a>
+            <button class="btn orange">Sweep now</button>
+            <a href="create-policy.html" class="btn green">Create New Policy</a>
+          </div>
+
+          <!-- Table Header -->
+          <table class="crypto-table">
+            <thead>
+              <tr>
+                <th>Crypto</th>
+                <th>Network</th>
+                <th>Wallet ID</th>
+                <th>Min. Value</th>
+                <th>Fee</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Set time</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>    <img src="/assets/eth.png" alt="Ethereum" class="crypto-icon" />
+ Ethereum</td>
+                <td>ERC-20</td>
+                <td>0xy45gFvsgAopNv</td>
+                <td>0.006 ETH</td>
+                <td>$2</td>
+                <td>
+                  0x234regh7yte54wgihioy
+                  <i
+                    class="fa-regular fa-copy copy-icon"
+                    style="cursor: pointer; margin-left: 6px"
+                    title="Copy"
+                  ></i>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>06:00h daily</td>
+                <td>
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>    <img src="/assets/usdt.png" alt="Tether" class="crypto-icon" />
+ Tether</td>
+                <td>ERC-20</td>
+                <td>0xy45gFvsgAopNv</td>
+                <td>10 USDT</td>
+                <td>$2</td>
+                <td>
+                  0x234regh7yte54wgihioy
+                  <i
+                    class="fa-regular fa-copy copy-icon"
+                    style="cursor: pointer; margin-left: 6px"
+                    title="Copy"
+                  ></i>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>06:00h daily</td>
+                <td>
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>    <img src="/assets/polygon.png" alt="Polygon" class="crypto-icon" />
+ Polygon</td>
+                <td>ERC-20</td>
+                <td>0xy45gFvsgAopNv</td>
+                <td>56 MATIC</td>
+                <td>$2</td>
+                <td>
+                  0x234regh7yte54wgihioy
+                  <i
+                    class="fa-regular fa-copy copy-icon"
+                    style="cursor: pointer; margin-left: 6px"
+                    title="Copy"
+                  ></i>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>06:00h daily</td>
+                <td>
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>    <img src="/assets/shiba.png" alt="Shiba Inu" class="crypto-icon" />
+ Shiba Inu</td>
+                <td>ERC-20</td>
+                <td>0xy45gFvsgAopNv</td>
+                <td>56 SHIB</td>
+                <td>$2</td>
+                <td>
+                  0x234regh7yte54wgihioy
+                  <i
+                    class="fa-regular fa-copy copy-icon"
+                    style="cursor: pointer; margin-left: 6px"
+                    title="Copy"
+                  ></i>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td>06:00h daily</td>
+                <td>
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <div id="sweep-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <span class="close-sweep-modal" title="Close">&times;</span>
+        <div class="modal-title">
+          <h3>Sweep ETH</h3>
+          <p>Enter the address and fee to proceed</p>
+        </div>
+        <label>
+          Address
+          <select style="width: 100%; margin-top: 0.3rem">
+            <option>Select Address</option>
+            <option>0x234regh7yte54wgihioy</option>
+            <option>0xabc1234567890def</option>
+          </select>
+        </label>
+        <label>
+          Fee
+          <div class="input-usd">
+            <input type="text" placeholder="Enter fee" />
+            <span class="usd-text">USD</span>
+          </div>
+        </label>
+        <div
+          style="margin: 1rem 0 0.5rem 0; text-align: center; font-weight: 500"
+        >
+          Enter Google Auth
+        </div>
+        <div class="google-auth-inputs">
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+          <input type="text" maxlength="1" class="auth-code-input" />
+        </div>
+        <button class="btn green" style="width: 100%">Confirm</button>
+      </div>
+    </div>
+    <script>
+      // Sweep Now Modal logic
+      const sweepModal = document.getElementById("sweep-modal");
+      const openSweepBtn = document.querySelector(".btn.orange");
+      const closeSweepBtn = document.querySelector(".close-sweep-modal");
+
+      openSweepBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        sweepModal.style.display = "flex";
+        sweepModal.querySelector(".auth-code-input").focus();
+      });
+
+      closeSweepBtn.addEventListener("click", function () {
+        sweepModal.style.display = "none";
+      });
+
+      sweepModal.addEventListener("click", function (e) {
+        if (e.target === sweepModal) {
+          sweepModal.style.display = "none";
+        }
+      });
+
+      // Auto-focus next input on entry
+      sweepModal
+        .querySelectorAll(".auth-code-input")
+        .forEach((input, idx, arr) => {
+          input.addEventListener("input", function () {
+            if (this.value.length === 1 && idx < arr.length - 1) {
+              arr[idx + 1].focus();
+            }
+          });
+          input.addEventListener("keydown", function (e) {
+            if (e.key === "Backspace" && !this.value && idx > 0) {
+              arr[idx - 1].focus();
+            }
+          });
+        });
+    </script>
+    <script>
+      document
+        .querySelectorAll(".chevron-toggle")
+        .forEach(function (icon, idx) {
+          icon.addEventListener("click", function () {
+            // Find all rows for this group
+            const groupRow = icon.closest("tr");
+            let nextRow = groupRow.nextElementSibling;
+            // Toggle icon direction
+            const isOpen = icon.classList.toggle("open");
+            icon.classList.toggle("fa-chevron-up", !isOpen);
+            icon.classList.toggle("fa-chevron-down", isOpen);
+            // Show/hide rows until next group-label-row or end
+            while (nextRow && !nextRow.classList.contains("group-label-row")) {
+              nextRow.style.display = isOpen ? "table-row" : "none";
+              nextRow = nextRow.nextElementSibling;
+            }
+          });
+        });
+    </script>
+    <script>
+      // Tab switching logic
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((c) => c.classList.remove("active"));
+          this.classList.add("active");
+          document
+            .querySelector(`.${this.dataset.tab}-tab`)
+            .classList.add("active");
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".copy-icon").forEach((icon) => {
+        icon.addEventListener("click", function () {
+          const address = this.parentElement.textContent.trim();
+          navigator.clipboard.writeText(address).then(() => {
+            this.classList.add("copied");
+            this.title = "Copied!";
+            setTimeout(() => {
+              this.classList.remove("copied");
+              this.title = "Copy";
+            }, 1200);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
